@@ -168,9 +168,12 @@ body {
 }
 
 .skill-card:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
-    border-color: #007bff; /* Highlight border on hover */
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.18);
+    border-color: #ff9800; /* Orange highlight on hover */
+    background: linear-gradient(120deg, #fffbe7 60%, #ffe0b2 100%);
+    font-weight: bold;
+    color: #ff9800;
 }
 
 .skill-icon {
