@@ -1,0 +1,282 @@
+/* General Body and Typography */
+body {
+    font-family: 'Inter', sans-serif; /* Using Inter for a modern look */
+    background-color: #f0f2f5; /* Light background for sections */
+    color: #343a40;
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll due to animations */
+    position: relative;
+    min-height: 100vh; /* Ensure body takes full height */
+}
+
+/* Dynamic Background Overlay */
+.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Behind all content */
+    background: linear-gradient(135deg, #a8c0ff, #3f2b96, #2193b0, #6dd5ed); /* Multi-color gradient */
+    background-size: 400% 400%; /* Larger than viewport to allow animation */
+    animation: gradientAnimation 15s ease infinite; /* Smooth, continuous animation */
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 100vh;
+    padding: 80px 0; /* Add some vertical padding */
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    /* Ensure content is readable against dynamic background */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.hero-section .container {
+    z-index: 1; /* Ensure content is above background effects */
+}
+
+.profile-img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border: 5px solid rgba(255, 255, 255, 0.8); /* Slightly transparent border */
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+}
+
+.profile-img:hover {
+    transform: scale(1.08) rotate(3deg);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.7); /* Subtle glow on hover */
+}
+
+/* Custom Buttons */
+.custom-btn {
+    border-radius: 50px; /* Pill-shaped buttons */
+    padding: 12px 30px;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.custom-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.btn-primary.custom-btn {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary.custom-btn:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.btn-success.custom-btn {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.btn-success.custom-btn:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+
+.btn-outline-info.custom-btn {
+    color: #17a2b8;
+    border-color: #17a2b8;
+}
+
+.btn-outline-info.custom-btn:hover {
+    background-color: #17a2b8;
+    color: #fff;
+}
+
+.btn-outline-light.custom-btn {
+    color: #fff;
+    border-color: #fff;
+}
+
+.btn-outline-light.custom-btn:hover {
+    background-color: #fff;
+    color: #007bff;
+}
+
+
+/* Custom Card Styling */
+.custom-card-dark {
+    background: rgba(255, 255, 255, 0.95); /* Slightly transparent white for a sleek look */
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15), 0 0 10px rgba(0, 0, 0, 0.05); /* Enhanced shadow */
+    position: relative;
+    z-index: 10; /* Ensure it's above other elements */
+    margin-top: -100px; /* Overlap with hero for continuity */
+    backdrop-filter: blur(5px); /* Subtle glassmorphism effect */
+    -webkit-backdrop-filter: blur(5px); /* For Safari */
+}
+
+/* Gradient Text for Headings */
+.gradient-text {
+    background: linear-gradient(45deg, #007bff, #17a2b8); /* Blue-cyan gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+/* Social Icons */
+.social-links .social-icon {
+    font-size: 2.2rem;
+    color: #6c757d; /* Muted grey for icons */
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    text-decoration: none;
+    margin: 0 15px; /* Wider spacing */
+}
+
+.social-links .social-icon:hover {
+    color: #007bff; /* Primary blue on hover */
+    transform: translateY(-7px) scale(1.1); /* More pronounced hover */
+}
+
+/* Skills Section */
+#skills {
+    background-color: #ffffff; /* White background for skills section */
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.skill-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 15px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.skill-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    border-color: #007bff; /* Highlight border on hover */
+}
+
+.skill-icon {
+    font-size: 3rem;
+    color: #007bff; /* Consistent primary color for icons */
+    margin-bottom: 15px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes zoomIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s ease-out forwards;
+    opacity: 0; /* Hidden by default */
+}
+
+.animate-slide-up {
+    animation: slideUp 1s ease-out forwards;
+    opacity: 0;
+    animation-delay: 0.3s;
+}
+
+.animate-zoom-in {
+    animation: zoomIn 1s ease-out forwards;
+    opacity: 0;
+    animation-delay: 0.6s;
+}
+
+/* For skill cards to animate sequentially */
+.animate-fade-in-up {
+    animation: slideUp 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+.animate-fade-in-up.delay-1 { animation-delay: 0.1s; }
+.animate-fade-in-up.delay-2 { animation-delay: 0.2s; }
+.animate-fade-in-up.delay-3 { animation-delay: 0.3s; }
+.animate-fade-in-up.delay-4 { animation-delay: 0.4s; }
+.animate-fade-in-up.delay-5 { animation-delay: 0.5s; }
+.animate-fade-in-up.delay-6 { animation-delay: 0.6s; }
+
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .custom-card-dark {
+        margin-top: -50px; /* Adjust overlap for medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.8rem;
+    }
+    .hero-section p {
+        font-size: 1.1rem;
+    }
+    .profile-img {
+        width: 140px;
+        height: 140px;
+    }
+    .custom-card-dark {
+        margin-top: -30px; /* Further adjust overlap for small screens */
+    }
+    .social-links .social-icon {
+        font-size: 1.8rem;
+        margin: 0 10px;
+    }
+    .custom-btn {
+        padding: 10px 25px;
+    }
+    .display-5 {
+        font-size: 2rem;
+    }
+    .fs-5 {
+        font-size: 1.05rem !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section h1 {
+        font-size: 2.2rem;
+    }
+    .hero-section p {
+        font-size: 0.95rem;
+    }
+    .profile-img {
+        width: 120px;
+        height: 120px;
+    }
+    .custom-card-dark {
+        padding: 20px;
+    }
+    .skill-icon {
+        font-size: 2.5rem;
+    }
+}
